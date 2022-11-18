@@ -7,7 +7,7 @@ public class Exercise4 {
         int primeNumber;
         int count = 0;
         int number = 2;
-        int dividerFailCount =0;
+        int dividerCount =0;
         do {
             System.out.println("how many prime number you want ?");
             primeNumber = scanner.nextInt();
@@ -17,17 +17,17 @@ public class Exercise4 {
         while (count < primeNumber){
             for (int divider = 1; divider <= number;divider++ ) {
                 if (number % divider == 0){
-                    dividerFailCount++;
+                    dividerCount++;
                 }
-                }if (dividerFailCount>2){
+                }if (dividerCount>2){
                     number++;
-                    dividerFailCount=0;
-                }if (dividerFailCount==2){
-                    count++;
-                    dividerFailCount=0;
-                    System.out.print(number +" ");
-                    number++;
-                }
-         }
+                    dividerCount=0;
+                } else if (dividerCount==2) {
+                count++;
+                dividerCount=0;
+                System.out.print(number +" ");
+                number++;
+                 }
+             }
         }
     }
